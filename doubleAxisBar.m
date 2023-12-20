@@ -63,7 +63,11 @@ function h = doubleAxisBar(y1, y2, varargin)
         title(p.Results.title);
     end
     if ~isempty(p.Results.legend)
-        legend(p.Results.legend);
+        lgd = p.Results.legend;
+        lgd = [lgd(1:size(y1,1)),...
+            repmat({''}, 1, size([y1;y2],1)),...
+            lgd(size(y1,1)+1:end)];
+        legend(lgd);
     end
     
 end
