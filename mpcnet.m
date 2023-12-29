@@ -1,4 +1,3 @@
-
 function [H,P] = mpcnet(mpc)
 %MPCNET 用于绘制matpower case的网络结构
 %   [H,P] = mpcnet(mpc) 绘制mpc的网络结构
@@ -27,13 +26,21 @@ function [H,P] = mpcnet(mpc)
 
 % Author: yjy @ https://github.com/3plus10i
 % Created on: : 2019-08-29
-% Revision: 2019-09-04
+% Revision: 2023-12-04
 
 %Origin comment:
 % 封装自 network1.m, 用来画matpower case的网络结构
 % 2019-08-29
 % plot based on Bioinformatic Toolbox, data based on Matpower Toolbox
 % 2019-09-04
+
+% 由于biograph已经在R2022a中被移除，所以这个函数也不再可用了。
+warning('This function is no longer available because biograph has been removed in R2022b.');
+warning('Please use PLOTMPC function instead.');
+[H, P] = plotmpc(mpc);
+return
+
+
 define_constants;
 mpc = loadcase(mpc);
 mpc = ext2int(mpc);
