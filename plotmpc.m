@@ -115,6 +115,10 @@ h = plot(G, ...
     'Marker', 'o', ...
     'MarkerSize', 8);
 
+% 增加标题
+titleStr = ['Matpower Case (', num2str(nNode), ' Buses)'];
+title(titleStr);
+
 % 制作数据提示
 row = dataTipTextRow('Voltage', nodeVoltage);
 h.DataTipTemplate.DataTipRows(1) = row;
